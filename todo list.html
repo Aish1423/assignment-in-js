@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>to do list</title>
+    <style>
+        button{
+            border-color: deeppink;
+            color: black;
+            border-radius: 6px 6px;
+            background-color: palevioletred;
+        }
+        body{
+            background-color: antiquewhite;
+        }
+        div{
+            height: 150px;
+            width: 350px;
+            background-color: aqua;
+            border-radius: 20px 20px;
+            text-align: center;
+           
+        }
+    </style>
+</head>
+<body>
+    <div>
+
+    <h1 style="color: brown;">To-Do List</h1>
+    <input type="text" placeholder="write in to-do list" id="inp" style="background-color: lightpink;">
+    <button onclick="addTask()">ADD</button>
+    <ul id="ul">
+        
+    </ul>
+</div>
+
+    <script>
+
+        const taskInput = document.getElementById('inp');
+        const ul = document.getElementById('ul');
+
+        function addTask() {
+            if (taskInput.value.trim() !== "") {
+                const li = document.createElement('li');
+                li.innerText = taskInput.value;
+                ul.appendChild(li);
+                taskInput.value = ''; // Clear the input field
+            } else {
+                alert("Please enter a task.");
+            }
+        }
+    </script>
+</body>
+</html>
